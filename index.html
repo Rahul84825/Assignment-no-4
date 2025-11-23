@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Services - Revitalize Your Clothes</title>
+  <link rel="stylesheet" href="resources/css/style.css">
+  <!-- booking styles were merged into resources/css/style.css -->
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Logo</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="username">Rahul</div>
+  </header>
+
+  <section class="hero-section">
+    <div class="left-div">
+      <h1>
+        <div>Revitalize Your </div>
+        <div class="half_heading">Clothes with Expert</div>
+        <div class="span">Laundry Services!</div>
+      </h1>
+      <p>From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and
+        rediscover the freshness of your clothes today!</p>
+      <button class="book-button" onclick="bookService()">Book a service today!</button>
+    </div>
+    <div class="right-div">
+      <img src="resources/css/img/machine.jpeg" alt="Washing Machine Icon">
+    </div>
+  </section>
+
+  <section class="overview-section">
+    <div class="overview-inner">
+      <h2 class="overview-title">Our Achievements</h2>
+      <div class="achievements">
+        <div class="achievement">
+          <h2>15+</h2>
+          <p>Laundry Services</p>
+        </div>
+        <hr>
+        <div class="achievement">
+          <h2>240+</h2>
+          <p>Happy Customers</p>
+        </div>
+        <hr>
+        <div class="achievement">
+          <h2>2+ Yrs</h2>
+          <p>Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid booking-section">
+    <!-- LEFT: services + quality -->
+    <div class="booking-inner">
+      <div class="card booking-left">
+        <h2 style="margin-top:0">Our Services</h2>
+        <p class="muted small">Click the Add Item button to add services to your cart</p>
+        <hr>
+        <ul id="servicesList" class="services-list" aria-live="polite">
+          <!-- JS will populate this list -->
+        </ul>
+        <hr>
+        <div class="hint">
+          <span class="pill"></span>
+          <div>Add the items to the cart and book now</div>
+        </div>
+      </div>
+      <!-- RIGHT: cart + booking -->
+      <div class="booking-right">
+
+
+        <div class="card upper" style="margin-bottom:12px">
+          <h3 style="margin-top:0">Added Items</h3>
+          <table class="cart-table" id="cartTable">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Service Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="cartBody">
+              <!-- items go here -->
+            </tbody>
+          </table>
+          <div class="total-row">
+            <div class="muted">Total Amount</div>
+            <div id="totalAmount">₹0.00</div>
+          </div>
+
+
+        </div>
+        <div class="card lower booking">
+          <h3 style="margin-top:0">Book Now</h3>
+          <form id="bookForm" autocomplete="off">
+            <label for="fullName" class="label">Full Name</label>
+            <div class="form-row" style="margin-top:8px">
+              <input id="fullName" name="fullName" type="text" placeholder="John Doe" required>
+            </div>
+            <div class="labels-row">
+              <label for="emailId" class="label">Email ID</label>
+              <label for="phone" class="label">Phone Number</label>
+            </div>
+            <div class="form-row form-row--two" style="margin-top:8px">
+              <input id="emailId" name="email" type="email" placeholder="mailid@gmail.com" required>
+              <input id="phone" name="phone" type="tel" placeholder="0000000000">
+            </div>
+            <button type="submit" aria-label="Submit booking">Book now</button>
+
+            <!-- Booking message required by assignment -->
+            <div id="bookingMessage" class="booking-message" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="quality-section">
+    <div class="quality-inner">
+      <div class="quality-cards">
+        <div class="quality-card">
+          <div class="quality-icon">📋</div>
+          <h3>Premium Services</h3>
+          <p>We offer premium dry cleaning to swift wash and fold, with expert care and attention to detail.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-icon">💬</div>
+          <h3>Quick Support</h3>
+          <p>24/7 customer support available to assist you with inquiries, feedback, or any laundry needs.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-icon">🚚</div>
+          <h3>Timely Delivery</h3>
+          <p>Guaranteed on-time pickup and delivery of your clothes with professional handling throughout.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-icon">💰</div>
+          <h3>Affordable Prices</h3>
+          <p>Competitive pricing without compromising on quality. We offer great value for premium services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-left">
+        <h2>Subscribe to our newsletter.</h2>
+      </div>
+      <div class="newsletter-right">
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="text" id="newsFullName" placeholder="Full Name" required>
+          <input type="email" id="newsEmail" placeholder="Email" required>
+          <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3 class="footer-logo">Logo</h3>
+        <p class="footer-about">Expert laundry services committed to quality and care.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:contact@laundry.com">contact@laundry.com</a></li>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#facebook" class="social-link" aria-label="Facebook">f</a>
+          <a href="#twitter" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#instagram" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#linkedin" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Expert Laundry Services. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="resources/js/script.js"></script>
+</body>
+
+</html>
