@@ -142,10 +142,14 @@
           const serviceID = 'service_5zz2a8h';
           const templateID = 'template_hj3g8uu';
 
+          const servicesText = cart.map(item => `- ${item.name}: ${formatINR(item.price)}`).join('\n');
+          const totalAmount = totalAmountEl.textContent;
+
           const templateParams = {
             name: document.getElementById('fullName').value,
-            email: document.getElementById('emailId').value,
-            phone: document.getElementById('phone').value
+            to_email: document.getElementById('emailId').value,
+            phone: document.getElementById('phone').value,
+            cart_items: `${servicesText}\n\nTotal: ${totalAmount}`
           };
 
           emailjs.send(serviceID, templateID, templateParams)
